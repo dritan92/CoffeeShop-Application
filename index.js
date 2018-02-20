@@ -1,4 +1,9 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  View,
+} from 'react-native';
 
-AppRegistry.registerComponent('FirstProject', () => App);
+import App from './app/';
+
+AppRegistry.registerComponent('FirstPage', () => App);

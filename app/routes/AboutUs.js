@@ -10,7 +10,7 @@ export default class AboutUs extends Component{
   render(){
     return(
       <View style = {styles.container}>
-        <Image style = {styles.image} source={require('../images/logo.png')}/>
+        <Image style = {styles.image} />
         <Text>---- Our Story -----</Text>
         <Text style = {styles.aboutus}>Founded in 2016 and based in Shepparton, Australia.
         Our coffeeshop invites people taste the best pizza in the world made by the best pizza chef,put the name here.We have a pizza day served only on Friday.LeLiNo(put the name of the coffeeshop) is the type of coffeeshop where nationalities come together as one.Out clientele includes Albanians, Turks, Germans, Australians and many more. Whether a place to rest or some delicious food to taste our coffeeshop guaratees the best service and atmosphere.

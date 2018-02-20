@@ -4,95 +4,66 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import {Text, View, StyleSheet, Image, TouchableHighlight} from 'react-native';
-import MenuPage from './routes/MenuPage';
-import AboutUs from './routes/AboutUs';
-import Reservation from './Reservation';
-import Events from './Events';
-import Drinks from './Drinks';
+import MenuPage from '../../routes/MenuPage';
+import AboutUs from '../../routes/AboutUs';
+import Reservation from '../../routes/Reservation';
+import Events from '../../routes/Events';
+import Drinks from '../../routes/Drinks';
+import Header from './Header';
 
 export default class FirstPage extends Component{
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    navigator: PropTypes.object.isRequired,
-  }
-  _onMenuPress = ()=>{
-    this.props.navigator.push({
-      title: 'Menu',
-      component: MenuPage,
-    });
-  }
-  _onAboutUsPress = () => {
-    this.props.navigator.push({
-      title: 'About Us',
-      component: AboutUs,
-    });
-  }
-  _onReservationPress = () =>{
-    this.props.navigator.push({
-      title: 'Reservation',
-      component: Reservation,
-    });
-  }
-  _onEventsPress = () => {
-    this.props.navigator.push({
-      title: 'Events',
-      component: Events,
-    });
-  }
-  _onDrinksPress = () => {
-    this.props.navigator.push({
-      title: 'Drinks',
-      component: Drinks,
-    })
-  }
+
+  static navigationOptions = {
+  ...Header
+}
   render(){
+    const { navigation: { navigate } } = this.props;
     return(
       <View style = {styles.container}>
         <Image style = {styles.containerBackground}
-        source={require('./images/wood-2065369_1280.jpg')}/>
-        <Image style = {styles.curtain} source={require(    './images/coffee-shop-logo.jpg')}/>
+        source={require('../../images/wood-2065369_1280.jpg')}/>
         <View style = {styles.mainContainer}>
             <View style = {styles.square}>
               <View style = {styles.firstRow}>
-                <Image style ={styles.images} source={require('./images/menu2.png')}/>
+                <Image style ={styles.images} source={require('../../images/menu2.png')}/>
                 <TouchableHighlight style={[styles.button,  this.props.hightlight ?  styles.button : null]}
                   underlayColor= '#ff1493'
-                  onPress = {this._onMenuPress}>
+                  onPress = {() => navigate('MenuPage')}>
                   <Text style = {styles.boardText}>Menu</Text>
                 </TouchableHighlight>
               </View>
 
               <View style = {styles.row}>
-                  <Image style ={styles.images} source={require('./images/aboutus.png')}/>
+                  <Image style ={styles.images} source={require('../../images/aboutus.png')}/>
                   <TouchableHighlight style={[styles.button, this.props.hightlight ?  styles.button : null]}
                    underlayColor= '#ff1493'
-                   onPress = {this._onAboutUsPress}>
+                   onPress = {() => navigate('AboutUs')}>
                      <Text style = {styles.boardText}>About Us</Text>
                  </TouchableHighlight>
               </View>
               <View style = {styles.row}>
-                  <Image style ={styles.images} source={require('./images/res.png')}/>
+                  <Image style ={styles.images} source={require('../../images/res.png')}/>
                   <TouchableHighlight style={[styles.button, this.props.hightlight ?  styles.button : null]}
                   underlayColor= '#ff1493'
-                  onPress = {this._onReservationPress}>
+                  onPress = {() => navigate('Reservation')}>
                     <Text style = {styles.boardText}>Reservation</Text>
                 </TouchableHighlight>
             </View>
 
             <View style = {styles.row}>
-                <Image style ={styles.images} source={require('./images/events.png')}/>
+                <Image style ={styles.images} source={require('../../images/events.png')}/>
                 <TouchableHighlight style={[styles.button, this.props.hightlight ?  styles.button : null]}
                   underlayColor= '#ff1493'
-                  onPress = {this._onEventsPress}>
+                  onPress = {() => navigate('Events')}>
                   <Text style = {styles.boardText}>Events</Text>
                 </TouchableHighlight>
 
             </View>
             <View style = {styles.row}>
-                <Image style ={styles.images} source={require('./images/drinks.png')} />
+                <Image style ={styles.images} source={require('../../images/drinks.png')} />
                 <TouchableHighlight style={[styles.button, this.props.hightlight ?  styles.button : null]}
                   underlayColor= '#ff1493'
-                  onPress = {this._onDrinksPress}>
+                  onPress = {() => navigate('Drinks')}>
                   <Text style = {styles.boardText}>Drinks</Text>
                 </TouchableHighlight>
             </View>
@@ -102,7 +73,7 @@ export default class FirstPage extends Component{
         <View style={styles.footer}>
           <TouchableHighlight style={[styles.footerButtons, this.props.hightlight ?  styles.footerButtons : null]}
             underlayColor= '#ff1493'
-            onPress = {this.props.onPress}>
+            onPress = {this.onPress}>
             <Image style = {styles.images} //source={require('./images/...')}
             />
          </TouchableHighlight>
