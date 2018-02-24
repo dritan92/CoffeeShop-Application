@@ -6,7 +6,7 @@ import {
         Text,
       } from 'react-native';
 
-
+import PropTypes from 'prop-types';
 import defaultStyles from './styles.js'
 
 const colorDefault = 'rgba(255, 255, 255,255)',
@@ -15,7 +15,7 @@ const colorDefault = 'rgba(255, 255, 255,255)',
 export default class Options extends Component{
   static propTypes = {
     value: PropTypes.string.isRequired,
-    isChosen: PropTypes.boolx.isRequired,
+    isChosen: PropTypes.bool.isRequired,
     onChose: PropTypes.func.isRequired,
   }
 
@@ -50,18 +50,19 @@ export default class Options extends Component{
 
   render(){
     const {value, isChosen, onChose} = this.props;
-    const backgroundColorAnimation = this.state.interpolate({
+    const backgroundColorAnimation = this.state.background.interpolate({
       inputRange: [0,100],
       outputRange: [colorDefault, colorSelected],
     })
     return(
       <TouchableOpacity
-        activateOpacity: {1},
-        onPress: {onChose}>
+        activateOpacity = {1}
+        onPress = {onChose}>
         <Animated.View style={[styles.container, {backgroundColor: backgroundColorAnimation}]}>
           <Text style={{color: isChosen ? colorDefault: colorSelected}}>
             {value}
           </Text>
+        </Animated.View>
       </TouchableOpacity>
     )}
 }
@@ -75,7 +76,4 @@ const styles = StyleSheet.create({
     padding: 10,
     marginRight: 10,
   },
-  text: {
-    ...defaultStyles.text,
-  }
 });

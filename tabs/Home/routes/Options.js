@@ -4,14 +4,14 @@ import {Dimensions,
         ScrollView,
         StyleSheet,
  } from 'react-native'
-
- import Option from './Option'
+import PropTypes from 'prop-types';
+import Option from './Option'
 
 const {width} = Dimensions.get('window');
 const optionWith = (width - 0) / 3- 10;
 
 export default class Options extends Component{
-  static propTypes{
+  static propTypes = {
     values: PropTypes.array.isRequired,
     chosen: PropTypes.number,
     onChoose: PropTypes.func.isRequired
@@ -19,8 +19,8 @@ export default class Options extends Component{
   render(){
     const {values, chosen, onChoose} = this.props;
     return(
-      <View style={styles.container}
-        <ScrollView >
+      <View style={styles.container}>
+        <ScrollView
           ref= {(scrollView) => {this._scrollView = scrollView;}}
           horizontal={true}
           decelerationRate = {0.1}
@@ -28,7 +28,7 @@ export default class Options extends Component{
           showVerticalScrollIndicator = {false}
           automaticallyAdjustContentInsets={false}
           snapToInterval={optionWith}
-          style={styles.options}
+          style={styles.options}>
           {values.map((value, index) =>
           <View style={{ width: optionWith }} key={index}>
             <Option

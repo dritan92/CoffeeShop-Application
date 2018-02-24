@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { defaultStyles } from './styles';
 import PropTypes from 'prop-types';
-
+import Options from './Options'
 // Get screen dimensions
 const { width, height } = Dimensions.get('window');
 // Set default popup height to 67% of screen height
@@ -264,12 +264,18 @@ export default class MenuPop extends Component {
             <View>
               {/* Day */}
               <Text style={styles.sectionHeader}>Day</Text>
-              {/* TODO: Add day options here */}
-              <Text>Add day options here</Text>
+              <Options
+                 values={days}
+                 chosen={chosenDay}
+                 onChoose={onChooseDay}
+              />
               {/* Time */}
               <Text style={styles.sectionHeader}>Showtime</Text>
-              {/* TODO: Add show time options here */}
-              <Text>Add show time options here</Text>
+              <Options
+                values={times}
+                chosen={chosenTime}
+                onChoose={onChooseTime}
+              />
             </View>
 
           </View>
