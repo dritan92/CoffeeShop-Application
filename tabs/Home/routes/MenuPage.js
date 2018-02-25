@@ -26,15 +26,27 @@ export default class MenuPage extends  Component{
       chosenTime: null,
     });
   }
-  choseDay = (day) => {
+  chooseDay = (day) => {
     this.setState({
       chosenDay: day
     });
   }
-  choseTime = (time) => {
+  chooseTime = (time) => {
     this.setState({
       chosenTime : time
     });
+  }
+  bookPizza = () =>{
+    if(!this.state.chosenTime){
+      alert('Please select show time');
+    }
+    else{
+      this.closePizza();
+      this.props.navigator.push({
+        name: 'confirmation',
+        code: Math.randrom.toString(36).substring(6).toUpperCase(),
+      })
+    }
   }
   render(){
     return(
@@ -53,13 +65,14 @@ export default class MenuPage extends  Component{
           )}
         </ScrollView>
         <MenuPop
-          pizza = {this.state.pizza}
-          isOpen = {this.state.popupIsOpen}
-          onClose = {this.closePizza}
-          chosenDay = {this.state.chosenDay}
-          chosenTime = {this.state.chosenTime}
-          onChosenDay = {this.choseDay}
-          onChosenTime = {this.choseTime}
+          pizza={this.state.pizza}
+          isOpen={this.state.popupIsOpen}
+          onClose={this.closePizza}
+          chosenDay={this.state.chosenDay}
+          chosenTime={this.state.chosenTime}
+          onChooseDay={this.chooseDay}
+          onChooseTime={this.chooseTime}
+          onBook = {this.bookPizza}
         />
 
      </View>

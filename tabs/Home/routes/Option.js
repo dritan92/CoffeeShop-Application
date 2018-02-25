@@ -16,7 +16,7 @@ export default class Options extends Component{
   static propTypes = {
     value: PropTypes.string.isRequired,
     isChosen: PropTypes.bool.isRequired,
-    onChose: PropTypes.func.isRequired,
+    onChoose: PropTypes.func.isRequired,
   }
 
   state={
@@ -49,7 +49,7 @@ export default class Options extends Component{
   }
 
   render(){
-    const {value, isChosen, onChose} = this.props;
+    const {value, isChosen, onChoose} = this.props;
     const backgroundColorAnimation = this.state.background.interpolate({
       inputRange: [0,100],
       outputRange: [colorDefault, colorSelected],
@@ -57,7 +57,7 @@ export default class Options extends Component{
     return(
       <TouchableOpacity
         activateOpacity = {1}
-        onPress = {onChose}>
+        onPress = {onChoose}>
         <Animated.View style={[styles.container, {backgroundColor: backgroundColorAnimation}]}>
           <Text style={{color: isChosen ? colorDefault: colorSelected}}>
             {value}
