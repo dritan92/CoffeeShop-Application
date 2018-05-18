@@ -191,8 +191,8 @@ export default class MenuPop extends Component {
         marginRight: 10,
       },
       objectContainer: this.state.expanded ? {
-        flexDirection: 'row',  // arrange image and object info in a column
-        alignItems: 'left',     // and center them
+        flexDirection: 'column',  // arrange image and object info in a column
+        alignItems: 'center',     // and center them
       } : {
         flexDirection: 'row',     // arrange image and object info in a row
       },
@@ -283,11 +283,11 @@ export default class MenuPop extends Component {
           {/* Footer */}
           <View style={styles.footer}>
             <TouchableHighlight
-              underlayColor="#9575CD"
+              underlayColor="brown"
               style={styles.buttonContainer}
               onPress={onBook}
             >
-              <Text style={styles.button}>Reserve this pizza</Text>
+              <Text style={styles.button}>Order this pizza</Text>
             </TouchableHighlight>
           </View>
 
@@ -328,12 +328,7 @@ const styles = StyleSheet.create({
     flex: 1,                            // take up all available space
   },
   image: {
-    height: 220,
-    borderRadius: 5,
-    width: width - 35,
-    borderColor: 'transparent',
-    alignItems: 'stretch',
-    borderWidth: 10,
+    borderRadius: 10,
     ...StyleSheet.absoluteFillObject,   // fill up all space in a container
   },
   objectInfo: {
@@ -341,10 +336,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Chalkduster',
-    fontSize: 26,
-    marginTop: 6,
-    marginLeft: 10,
-    marginBottom: -4,
+    fontSize: 20,
   },
   description: {
     fontFamily: 'Cochin',
@@ -366,7 +358,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   buttonContainer: {
-    backgroundColor: '#ff0000',
+      backgroundColor: '#6f4e37',
     borderRadius: 100,
     paddingVertical: 10,
     paddingHorizontal: 15,

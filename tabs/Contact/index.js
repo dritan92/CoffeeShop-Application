@@ -44,7 +44,7 @@ export default class Contact extends Component{
           onPress={this.sendMessage}
           title = "Submit"
           large
-          backgroundColor = "#fe0000"
+          backgroundColor = "#6f4e37"
           buttonStyle = {styles.button}
           />
       </View>

@@ -6,7 +6,6 @@ import AboutUs from './routes/AboutUs';
 import Drinks from './routes/Drinks';
 import Events from './routes/Events';
 import Reservation from './routes/Reservation';
-import Confirmation from './routes/Confirmation';
 
 import { StackNavigator } from 'react-navigation';
 
@@ -17,15 +16,14 @@ const routeConfig = {
   Events:   { screen: Events  },
   Reservation: {screen: Reservation},
   MenuPage: { screen: MenuPage},
-  Confirmation: {screen: Confirmation},
 }
 
 const StackNavigatorConfig = {
   navigationOptions: {
     headerBackTitleStyle: {
-      color: '#fe0000',
+      color: '#6f4e37',
     },
-    headerTintColor: '#fe0000'
+    headerTintColor: '#6f4e37',
   }
 }
 

@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, ScrollView, Image} from 'react-native';
-
+//there is a bug in this class import Confirmation from './Confirmation'
 import MenuItemPizzas from '../../../components/MenuItemPizzas';
 import MenuPop from './MenuPop'
 
@@ -42,10 +42,7 @@ export default class MenuPage extends  Component{
     }
     else{
       this.closePizza();
-      this.props.navigator.push({
-        name: 'confirmation',
-        code: Math.randrom.toString(36).substring(6).toUpperCase(),
-      })
+      //<Confirmation/>
     }
   }
   render(){
@@ -53,7 +50,6 @@ export default class MenuPage extends  Component{
       <View style = {styles.container}>
       <ScrollView
             contentContainerStyle={styles.scrollContent}
-        // Hide all scroll indicators
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}>
            {pizzas.map((pizza, index) =>
@@ -81,6 +77,9 @@ export default class MenuPage extends  Component{
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingTop: 20,
+  },
   containerBackground:{
     flex: 1,
     resizeMode: 'center',
@@ -89,8 +88,5 @@ const styles = StyleSheet.create({
       flexDirection: 'row',   // arrange posters in rows
       flexWrap: 'wrap',       // allow multiple rows
     },
-  container: {
-    paddingTop: 20,
 
-  }
 })

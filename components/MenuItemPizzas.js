@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   basket:{
     width: 30,
     height: 30,
+    marginRight:20,
   },
   rowContainer:{
     flexDirection: 'row',

@@ -1,16 +1,15 @@
 import React , {Component} from 'react'
 import {
         Animated,
-        StyleSheet,
         TouchableOpacity,
         Text,
+        StyleSheet,
       } from 'react-native';
 
 import PropTypes from 'prop-types';
-import defaultStyles from './styles.js'
 
-const colorDefault = 'rgba(255, 255, 255,255)',
-      colorSelected = 'red'
+const colorDefault = 'white',
+      colorSelected = '#6f4e37'
 
 export default class Options extends Component{
   static propTypes = {

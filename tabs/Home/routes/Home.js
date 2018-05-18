@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
    borderRadius: 5,
  },
  title: {
-   color: '#994C00',
+   color: '#6f4e37',
    backgroundColor: 'transparent',
    fontSize: 22,
    fontFamily: 'Chalkboard SE',

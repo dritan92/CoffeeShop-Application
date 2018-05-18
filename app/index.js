@@ -44,7 +44,7 @@ const TabConfig={
 
 const TabStyleConfig = {
   tabBarOptions: {
-    activeTintColor: '#994C00',
+    activeTintColor: '#6f4e37',
   },
 }
 
